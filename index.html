@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Aatmanirbhar.org </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+<body >
+    <style>
+        
+        input[type=button] {
+            background-color:#66CCCC; 
+            border: none;
+            color:#663333;
+            border-radius: 4px;
+            padding: 15px 32px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        body {
+        background-image: url("images/background.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        }
+    </style>
+    <header>
+        <nav>
+          <ul>
+                <a href="index.html"><li>Home</li></a>
+                <a href="about.html"><li>About</li></a>
+                <a href="contact.html"><li>Contact</li></a>
+          </ul>
+        </nav>
+    </header>
+
+    <div class="loginBox" id="d1">
+
+        <img src="images/user.png" class="user">
+
+        <form>
+            <p>Email</p>
+            <input type="text" name="" id="E-mail" placeholder="Enter Email">
+            <p>Password</p>
+            <input type="password" name="" id="psword" placeholder="Enter Password">
+            <input type="button" id="b" name="" value="Sign In" href="#" onclick="validate()">
+
+            <a href="#" onclick="register()">register now</a>
+        </form>
+    </div>
+
+
+
+
+
+    <div id="info" style="display: none;">
+
+        <section class="box"> 
+        <form id="workorhire">
+            <h3>Select preference for Job: </h3>
+            <input type="radio" name="basic" value="work" id="w"> Be an employer<br>
+            <input type="radio" name="basic" value="hire" id="h"> Be an employee<br>
+        </form>
+        </section>
+        <section class="box">
+        <form id="city">
+            <p>
+            <h3>Select your city:</h3>
+            <label for="District"></label>
+                <select id="drpc" name="dist2">  
+                    <option disabled selected>Select City</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Kanpur">Kanpur</option>
+                    <option value="Agra">Agra</option>
+                </select>
+            </p>
+        </form>
+        </section>
+        <section class="box">
+            <form id="land">
+            <h3>Enter the land is under your possesion: (sq. ft)</h3>
+            <p>
+                <input id="area" type="number" placeholder="Enter area in sq.ft">
+            </p>
+            </form>
+        </section>
+        <section class="box">
+        <form id="invest">
+            <h3>You can invest :</h3>
+            <p>
+                <label for="kitne paise hai"></label>
+
+                <select id="drp" name="d">  
+                    <option disabled selected>Select money range</option><option value="1">less than 2 Lakhs</option>
+                    <option value="2">2 lakhs to 10 lakhs</option>
+                    <option value="3">10 lakhs to 20 lakhs</option>
+                    <option value="4">more than 20 lakhs</option>
+                </select>
+            </p>
+    </form>
+    </section>
+    <section class="box">
+        <input type="button" value="Submit" onclick="getDetails()">
+        
+        <button onclick="openkk()">About kisan credit card</button>
+        <button onclick="sout()">Log out</button>
+        <a href="#" style="text-decoration: aliceblue;"></a>
+    </section>
+    <section class="boxAdv">
+        <p id="tsh"></p>
+    </section>
+    </div>
+
+    <div class="loginBox" id="d2" style="display: none;">
+
+        <img src="images/user.png" class="user">
+
+        <form id="reg">
+            <p>Name</p><input type="text" name="" id="name" placeholder="Enter your name">
+            <p>Email</p>
+            <input type="email" name="" id="Email" placeholder="Enter Email">
+            <p>Create Password</p>
+            <input type="password" name="" id="password" placeholder="Enter Password">
+            <p>Confirm Password</p>
+            <input type="password" name="" id="cpas" placeholder="Re-Enter Password">
+
+            <input type="button" id="b" name="" value="Sign up" href="#" onclick="save()">
+
+
+        </form>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCZ-YeswwUOATAdO_TOpyQsjL7E0X4wdPA",
+            authDomain: "myproj-3a2f0.firebaseapp.com",
+            databaseURL: "https://myproj-3a2f0.firebaseio.com",
+            projectId: "myproj-3a2f0",
+
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    </script>
+
+    <script src="js/main.js"></script>
+    <script src="js/main1.js"></script>
+    <script src="js/main2.js"></script>
+
+</body>
+
+</html>
